@@ -3,6 +3,12 @@ created by Rich Boyce and Tyller Mendoza
 
 [GitHub FrontEnd Repo](https://github.com/tsunami-dev/front_end_single_resource) 
 
+### installs:  
+   -_npm install express@4_  
+   -_npm install dotenv@16_  
+   -_npm install --save-dev nodemon_  
+   -_npm install cors_  
+   -_npm i pg-promise_  
 
 
 
