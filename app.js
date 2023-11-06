@@ -12,7 +12,7 @@ app.use("/games", gamesController);
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Welcome to our Game Database App Pair Project");
+  res.send("Welcome to our Game Database Pair Project");
 });
 
 // Export
