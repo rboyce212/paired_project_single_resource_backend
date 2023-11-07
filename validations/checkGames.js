@@ -6,7 +6,7 @@ const checkName = (req, res, next) => {
   }
 };
 
-const checkBoolean = (req, res, nest) => {
+const checkBoolean = (req, res, next) => {
   const banned = req.body.is_banned;
   if (typeof banned === "boolean") {
     next();
