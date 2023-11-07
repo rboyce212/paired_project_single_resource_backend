@@ -3,16 +3,16 @@ const games = express.Router();
 const {
   getAllGames,
   getGame,
-  addGame,
+  createGame,
   deleteGame,
   updateGame
 } = require("../queries/game");
 const { checkName, checkBoolean } = require("../validations/checkGames");
 
 // CREATE ROUTE to create new resources.
-games.post("/", checkName, checkBoolen, async (req, res) => {
+games.post("/", checkName, checkBoolean, async (req, res) => {
   const body = req.body;
-  const game = await addGame(body);
+  const game = await createGame(body);
   res.status(200).json(game);
 });
 
@@ -38,7 +38,7 @@ games.get("/:id", async (req, res) => {
 });
 
 // UPDATE ROUTE to update a single resource.
-games.put("/:id", checkGame, checkBoolean, async (req, res) => {
+games.put("/:id", checkName, checkBoolean, async (req, res) => {
   const { id } = req.params;
   const body = req.body;
   const updatedGame = await updateGame(id, body);

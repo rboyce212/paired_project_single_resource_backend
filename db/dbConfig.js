@@ -15,4 +15,4 @@ const cn = {
 // connect to games_dev db
 const db = pgp(cn);
 
-modules.exports = db;
+module.exports = db;
