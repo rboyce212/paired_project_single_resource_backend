@@ -9,13 +9,6 @@ const {
 } = require("../queries/game");
 const { checkName, checkBoolean } = require("../validations/checkGames");
 
-// CREATE ROUTE to create new resources.
-games.post("/", checkName, checkBoolean, async (req, res) => {
-  const body = req.body;
-  const game = await createGame(body);
-  res.status(200).json(game);
-});
-
 // READ ROUTE to read all resources.
 games.get("/", async (req, res) => {
   const allGames = await getAllGames();
@@ -35,6 +28,13 @@ games.get("/:id", async (req, res) => {
   } else {
     res.status(404).json({ error: "Not Found" });
   }
+});
+
+// CREATE ROUTE to create new resources.
+games.post("/", checkName, checkBoolean, async (req, res) => {
+  const body = req.body;
+  const game = await createGame(body);
+  res.status(200).json(game);
 });
 
 // UPDATE ROUTE to update a single resource.
