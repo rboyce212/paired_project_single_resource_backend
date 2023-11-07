@@ -7,7 +7,7 @@ const app = express();
 
 const cors = require("cors");
 app.use(cors());
-app.use(exress.json());
+app.use(express.json());
 app.use("/games", gamesController);
 
 // Routes
