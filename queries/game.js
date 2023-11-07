@@ -24,7 +24,7 @@ const createGame = async (color) => {
     try {
         const newGame = await db.one(
             "INSERT INTO games (name, esrb_rating, price, game_type, genre, release_year, is_banned) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
-            [color.name, color.is_favorite]
+            [game.name, game.esrb_rating, game.price, game.game_type, game.genre, game.release_year, game.is_banned]
         )
         return newGame
     } catch (error) {
@@ -48,7 +48,7 @@ const deleteGame = async (id) => {
     try {
       const updatedGame = await db.one(
         "UPDATE games SET name=$1, esrb_rating=$2, price=$3, game_type=$4, genre=$5, release_year =$6, is_banned =$7 where id=$8 RETURNING *",
-        [color.name, color.is_favorite, id]
+        [game.name, game.esrb_rating, game.price, game.game_type, game.genre, game.release_year, game.is_banned, id]
       );
       return updatedGame;
     } catch (error) {
