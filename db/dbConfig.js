@@ -5,7 +5,7 @@ require("dotenv").config();
 
 // configuration object.
 const cn = {
-  hot: process.env.PG_HOST,
+  host: process.env.PG_HOST,
   port: process.env.PG_PORT,
   database: process.env.PG_DATABASE,
   user: process.env.PG_USER,
