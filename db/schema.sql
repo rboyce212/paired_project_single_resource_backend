@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS games_dev;
-CREATE DATABASE games_dev;
+DROP DATABASE IF EXISTS colors_dev;
+CREATE DATABASE colors_dev;
 
-\c games_dev;
+\c colors_dev;
 
 CREATE TABLE games (
     id SERIAL PRIMARY KEY,
